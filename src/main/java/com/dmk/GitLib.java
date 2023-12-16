@@ -13,6 +13,8 @@ public class GitLib {
     private final TreeBuilder mainTree;
     private final List<Commit> commitList;
     private final HashMap<String, GitObject> objects;
+
+    private HashMap<String,Commit> commitMap;
     private final String path;
 
     /**
@@ -24,6 +26,7 @@ public class GitLib {
         commitList = new ArrayList<>();
         objects = new HashMap<>();
         this.path = path;
+        commitMap = new HashMap<>();
     }
 
     List<GitObject> getObjects() {
@@ -106,11 +109,15 @@ public class GitLib {
         // build tree
         Tree t = mainTree.build(objects);
         // create commit
+        Commit commit;
         if (commitList.isEmpty()) {
-            commitList.add(new Commit(author, message, t, null));
+            commit = new Commit(author, message, t, null);
+            commitList.add(commit);
         } else {
-            commitList.add(new Commit(author, message, t, commitList.get(commitList.size() - 1)));
+            commit = new Commit(author, message, t, commitList.get(commitList.size() - 1));
+            commitList.add(commit);
         }
+        commitMap.put(commit.getHash(), commit);
     }
 
     /**
@@ -129,11 +136,9 @@ public class GitLib {
      * @return commit or null if not found
      */
     public Commit findCommitByHash(String hash) {
-        for (Commit commit : commitList) {
-            if (Objects.equals(commit.getHash(), hash)) {
-                System.out.printf(commit.toString() + "\n");
-                return commit;
-            }
+        if(commitMap.containsKey(hash)) {
+            System.out.println(commitMap.get(hash).toString());
+            return commitMap.get(hash);
         }
         return null;
     }
