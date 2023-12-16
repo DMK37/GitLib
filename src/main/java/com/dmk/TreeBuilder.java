@@ -3,15 +3,9 @@ package com.dmk;
 import java.util.*;
 
 class TreeBuilder {
-    private final HashMap<String, HashMap<String, Blob>> blobsUnderPath;
-
-    private final HashMap<String, TreePair> treesUnderPath;
-
     private final HashMap<String, UnfinishedTree> unfinishedTrees;
 
     public TreeBuilder() {
-        blobsUnderPath = new HashMap<>();
-        treesUnderPath = new HashMap<>();
         unfinishedTrees = new HashMap<>();
     }
 
@@ -32,18 +26,6 @@ class TreeBuilder {
             UnfinishedTree unfinishedTree = new UnfinishedTree(path.substring(path.lastIndexOf('/') + 1));
             unfinishedTree.addBlob(blob, extrudedFilename);
             unfinishedTrees.put(path, unfinishedTree);
-        }
-
-        if (blobsUnderPath.containsKey(path)) {
-            if (blobsUnderPath.get(path).containsKey(extrudedFilename)) {
-                if (!Objects.equals(blobsUnderPath.get(path).get(extrudedFilename).getHash(), blob.getHash()))
-                    blobsUnderPath.get(path).put(extrudedFilename, blob);
-            } else
-                blobsUnderPath.get(path).put(extrudedFilename, blob);
-        } else {
-            HashMap<String, Blob> map = new HashMap<>();
-            map.put(extrudedFilename, blob);
-            blobsUnderPath.put(path, map);
         }
     }
 

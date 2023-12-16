@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="changed to hashmap findCommitByHash">
+    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="half finished README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmk/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmk/TreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/TreeBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +28,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "DMK37"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DMK37&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -60,7 +61,8 @@
   "keyToString": {
     "Application.Main.executor": "Debug",
     "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.GitLibTest.executor": "Run",
+    "JUnit.GitLibTest.executor": "Debug",
+    "JUnit.GitLibTest.file1OnlyCreatedOnceButUsedInDifferentFolders.executor": "Run",
     "JUnit.GitLibTest.hashForBlobWithSameDataAlwaysOne.executor": "Debug",
     "Maven.GitLib [clean,install].executor": "Run",
     "Maven.GitLib [clean].executor": "Run",
@@ -110,7 +112,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GitLibTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dmk.Main" />
       <module name="GitLib" />
@@ -133,6 +135,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GitLibTest.file1OnlyCreatedOnceButUsedInDifferentFolders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GitLib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dmk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dmk" />
+      <option name="MAIN_CLASS_NAME" value="com.dmk.GitLibTest" />
+      <option name="METHOD_NAME" value="file1OnlyCreatedOnceButUsedInDifferentFolders" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GitLibTest.hashForBlobWithSameDataAlwaysOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GitLib" />
       <extension name="coverage">
@@ -151,8 +169,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GitLibTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GitLibTest.file1OnlyCreatedOnceButUsedInDifferentFolders" />
         <item itemvalue="JUnit.GitLibTest.hashForBlobWithSameDataAlwaysOne" />
       </list>
     </recent_temporary>
@@ -205,7 +224,9 @@
       <workItem from="1702686381067" duration="24000" />
       <workItem from="1702686416041" duration="10000" />
       <workItem from="1702718380586" duration="3796000" />
-      <workItem from="1702732553342" duration="6301000" />
+      <workItem from="1702732553342" duration="7037000" />
+      <workItem from="1702748094972" duration="23000" />
+      <workItem from="1702759320638" duration="2701000" />
     </task>
     <task id="LOCAL-00001" summary="Created base files and classes for managing blobs, trees and commits.">
       <option name="closed" value="true" />
@@ -239,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702746239304</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="half finished README.md">
+      <option name="closed" value="true" />
+      <created>1702747134274</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702747134274</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,18 +291,10 @@
     <MESSAGE value="Finished project" />
     <MESSAGE value="Added comments" />
     <MESSAGE value="changed to hashmap findCommitByHash" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed to hashmap findCommitByHash" />
+    <MESSAGE value="half finished README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="half finished README.md" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dmk/Main.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.dmk.GitLib" memberName="objects" />
