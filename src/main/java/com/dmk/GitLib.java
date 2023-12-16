@@ -163,7 +163,7 @@ public class GitLib {
     }
 
     /**
-     * show tree or blob by hash
+     * print tree or blob by hash
      */
     public void showObjectByHash(String hash) {
         if(objects.containsKey(hash)) {

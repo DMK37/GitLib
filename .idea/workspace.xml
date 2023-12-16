@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="Added comments">
+    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="changed to hashmap findCommitByHash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" afterDir="false" />
@@ -205,7 +205,7 @@
       <workItem from="1702686381067" duration="24000" />
       <workItem from="1702686416041" duration="10000" />
       <workItem from="1702718380586" duration="3796000" />
-      <workItem from="1702732553342" duration="5398000" />
+      <workItem from="1702732553342" duration="6301000" />
     </task>
     <task id="LOCAL-00001" summary="Created base files and classes for managing blobs, trees and commits.">
       <option name="closed" value="true" />
@@ -231,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702745443673</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changed to hashmap findCommitByHash">
+      <option name="closed" value="true" />
+      <created>1702746239304</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702746239304</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +261,8 @@
     <MESSAGE value="Created base files and classes for managing blobs, trees and commits." />
     <MESSAGE value="Finished project" />
     <MESSAGE value="Added comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments" />
+    <MESSAGE value="changed to hashmap findCommitByHash" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed to hashmap findCommitByHash" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
