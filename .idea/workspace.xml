@@ -4,19 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/BlobPair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Commit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TreePair.java" afterDir="false" />
+    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="Created base files and classes for managing blobs, trees and commits.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/BlobPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/GitObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/TreeBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/UnfinishedTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/dmk/GitLibTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/files/file1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/files/file2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/files/file3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/files/subdir/file1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Blob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Blob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BlobPair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Commit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TreePair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/TreePair.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +36,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -46,35 +60,113 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Debug",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.GitLibTest.executor": "Run",
+    "JUnit.GitLibTest.hashForBlobWithSameDataAlwaysOne.executor": "Debug",
+    "Maven.GitLib [clean,install].executor": "Run",
+    "Maven.GitLib [clean].executor": "Run",
+    "Maven.GitLib [compile].executor": "Run",
+    "Maven.GitLib [install].executor": "Run",
+    "Maven.GitLib [package].executor": "Run",
+    "Maven.GitLib [validate].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/dima/IdeaProjects/GitLib/src/test/resources/files",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/files" />
+      <recent name="$PROJECT_DIR$/src/test/resources/files/subdir" />
+      <recent name="$PROJECT_DIR$/src/main" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/numberOfBlobsShoudlBeTwo" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.dmk" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.GitLibTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="com.dmk.Main" />
       <module name="GitLib" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GitLibTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GitLib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dmk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dmk" />
+      <option name="MAIN_CLASS_NAME" value="com.dmk.GitLibTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GitLibTest.hashForBlobWithSameDataAlwaysOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GitLib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dmk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dmk" />
+      <option name="MAIN_CLASS_NAME" value="com.dmk.GitLibTest" />
+      <option name="METHOD_NAME" value="hashForBlobWithSameDataAlwaysOne" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GitLibTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GitLibTest.hashForBlobWithSameDataAlwaysOne" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-20.0.2-azul-20.0.2-3183f394aec4-7a0a4d15" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -90,10 +182,74 @@
       <workItem from="1701533409548" duration="2870000" />
       <workItem from="1701599409886" duration="5347000" />
       <workItem from="1701632601046" duration="145000" />
+      <workItem from="1701632799907" duration="1664000" />
+      <workItem from="1701715890209" duration="3647000" />
+      <workItem from="1702157297972" duration="39000" />
+      <workItem from="1702157395895" duration="91000" />
+      <workItem from="1702157502697" duration="6238000" />
+      <workItem from="1702202824573" duration="22000" />
+      <workItem from="1702293795918" duration="26000" />
+      <workItem from="1702294639325" duration="188000" />
+      <workItem from="1702317852049" duration="18000" />
+      <workItem from="1702333540402" duration="473000" />
+      <workItem from="1702408289751" duration="425000" />
+      <workItem from="1702408996259" duration="2606000" />
+      <workItem from="1702415621029" duration="3951000" />
+      <workItem from="1702423016755" duration="52000" />
+      <workItem from="1702423089048" duration="160000" />
+      <workItem from="1702502756181" duration="1330000" />
+      <workItem from="1702573984524" duration="73000" />
+      <workItem from="1702574087994" duration="14112000" />
+      <workItem from="1702643873780" duration="4122000" />
+      <workItem from="1702650352677" duration="207000" />
+      <workItem from="1702651723359" duration="62000" />
+      <workItem from="1702651803612" duration="632000" />
+      <workItem from="1702652576801" duration="299000" />
+      <workItem from="1702657535778" duration="13895000" />
+      <workItem from="1702686381067" duration="24000" />
+      <workItem from="1702686416041" duration="10000" />
+      <workItem from="1702718380586" duration="3796000" />
+      <workItem from="1702732553342" duration="3136000" />
     </task>
+    <task id="LOCAL-00001" summary="Created base files and classes for managing blobs, trees and commits.">
+      <option name="closed" value="true" />
+      <created>1701632985641</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701632985641</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added base" />
+    <MESSAGE value="Created base files and classes for managing blobs, trees and commits." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created base files and classes for managing blobs, trees and commits." />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.dmk.GitLib" memberName="objects" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

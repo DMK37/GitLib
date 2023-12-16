@@ -1,3 +1,5 @@
+package com.dmk;
+
 record TreePair(Tree tree, String filename) {
 
     @Override

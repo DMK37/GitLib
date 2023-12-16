@@ -1,16 +1,19 @@
+package com.dmk;
+
 import org.apache.commons.codec.digest.DigestUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 
-class Tree {
+class Tree extends GitObject{
     private final List<BlobPair> blobs;
     private final List<TreePair> trees;
 
     private String hash;
 
-    public Tree(List<BlobPair> blobs, List<TreePair> trees) {
+    Tree(List<BlobPair> blobs, List<TreePair> trees) {
         this.blobs = blobs;
         this.trees = trees;
         setHash();
@@ -37,8 +40,17 @@ class Tree {
         hash = DigestUtils.sha1Hex("tree " + builder.length() + "\0" + builder);
     }
 
-    public String getHash() {
+    @Override
+    String getHash() {
         return hash;
+    }
+
+    List<TreePair> getTrees() {
+        return new ArrayList<>(trees);
+    }
+
+    List<BlobPair> getBlobs() {
+        return new ArrayList<>(blobs);
     }
 
     @Override

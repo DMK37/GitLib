@@ -1,11 +1,13 @@
+package com.dmk;
+
 import org.apache.commons.codec.digest.DigestUtils;
 
-class Blob {
+class Blob extends GitObject{
     private final String data;
 
     private String hash;
 
-    public Blob(String data) {
+    Blob(String data) {
         this.data = data;
         setHash();
     }
@@ -14,11 +16,12 @@ class Blob {
         hash = DigestUtils.sha1Hex("blob " + data.length() + "\0" + data);
     }
 
-    public String getData() {
+    String getData() {
         return data;
     }
 
-    public String getHash() {
+    @Override
+    String getHash() {
         return hash;
     }
 

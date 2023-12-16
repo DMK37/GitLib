@@ -1,8 +1,10 @@
+package com.dmk;
+
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.time.LocalDateTime;
 
-class Commit {
+public class Commit {
     private final String author;
     private final String message;
     private final LocalDateTime time;
@@ -16,6 +18,10 @@ class Commit {
         return author;
     }
 
+    public String getTreeHash() {
+        return tree.getHash();
+    }
+
     public String getMessage() {
         return message;
     }
@@ -24,7 +30,7 @@ class Commit {
         return time;
     }
 
-    public Tree getTree() {
+    Tree getTree() {
         return tree;
     }
 
@@ -37,7 +43,7 @@ class Commit {
     }
 
 
-    public Commit(String author, String message, Tree tree, Commit parentCommit) {
+    Commit(String author, String message, Tree tree, Commit parentCommit) {
         this.author = author;
         this.message = message;
         this.tree = tree;
@@ -79,6 +85,9 @@ class Commit {
                 s2 + '\n' +
                 "author " +
                 author +
+                '\n' +
+                "time " +
+                time.toString() +
                 '\n' +
                 message;
     }
