@@ -4,28 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="Created base files and classes for managing blobs, trees and commits.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/BlobPair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/GitObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/TreeBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/UnfinishedTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dmk/GitLibTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/files/file1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/files/file2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/files/file3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/files/subdir/file1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="Finished project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Blob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Blob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BlobPair.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Commit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Commit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TreePair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/TreePair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +25,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "DMK37"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bb132f1b-e917-4ae7-aa94-a1bb41185f2e" />
+        <option name="url" value="https://github.com/DMK37/GitLib.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -209,7 +204,7 @@
       <workItem from="1702686381067" duration="24000" />
       <workItem from="1702686416041" duration="10000" />
       <workItem from="1702718380586" duration="3796000" />
-      <workItem from="1702732553342" duration="3136000" />
+      <workItem from="1702732553342" duration="4378000" />
     </task>
     <task id="LOCAL-00001" summary="Created base files and classes for managing blobs, trees and commits.">
       <option name="closed" value="true" />
@@ -219,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701632985641</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finished project">
+      <option name="closed" value="true" />
+      <created>1702735809239</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702735809239</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +242,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added base" />
     <MESSAGE value="Created base files and classes for managing blobs, trees and commits." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created base files and classes for managing blobs, trees and commits." />
+    <MESSAGE value="Finished project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished project" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

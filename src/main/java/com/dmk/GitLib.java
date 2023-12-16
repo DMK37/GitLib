@@ -6,12 +6,19 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.*;
 
+/**
+ * GitLib class is main class of this project, which user will use to interact with git clone
+ */
 public class GitLib {
     private final TreeBuilder mainTree;
     private final List<Commit> commitList;
     private final HashMap<String, GitObject> objects;
     private final String path;
 
+    /**
+     * Creates new GitLib object, similar to git init
+     * @param path path to project root
+     */
     public GitLib(String path) {
         mainTree = new TreeBuilder();
         commitList = new ArrayList<>();
@@ -23,6 +30,10 @@ public class GitLib {
         return new ArrayList<>(objects.values());
     }
 
+    /**
+     * Adds file to the stage
+     * @param filename file to add, path is relative to project root
+     */
     public void add(String filename) {
         if("*".equals(filename)) {
             ///
@@ -73,6 +84,12 @@ public class GitLib {
         }
     }
 
+    /**
+     * reads file
+     * @param fileName path to file
+     * @return file content as string
+     * @throws IOException
+     */
     private static String readFileAsString(String fileName) throws IOException {
         String data = "";
         data = new String(
@@ -80,6 +97,11 @@ public class GitLib {
         return data;
     }
 
+    /**
+     * Creates commit
+     * @param author author of commit
+     * @param message message of commit
+     */
     public void commit(String author, String message) {
         // build tree
         Tree t = mainTree.build(objects);
@@ -91,6 +113,10 @@ public class GitLib {
         }
     }
 
+    /**
+     * Lists all commits
+     * @return list of commits as new arraylist
+     */
     public List<Commit> listCommits() {
         for(int i = 0; i < commitList.size(); i++) {
             System.out.printf(commitList.get(i).toString() + "\n");
@@ -98,6 +124,10 @@ public class GitLib {
         return new ArrayList<>(commitList);
     }
 
+    /**
+     * find commit by hash
+     * @return commit or null if not found
+     */
     public Commit findCommitByHash(String hash) {
         for (Commit commit : commitList) {
             if (Objects.equals(commit.getHash(), hash)) {
@@ -108,6 +138,10 @@ public class GitLib {
         return null;
     }
 
+    /**
+     * find commit by metadata
+     * @return commit or null if not found
+     */
     public Commit findCommitByMetadata(String author, String message, LocalDateTime time, String parentHash, String treeHash) {
         for (Commit commit : commitList) {
             Commit parentCommit = commit.getParentCommit();
@@ -123,6 +157,9 @@ public class GitLib {
         return null;
     }
 
+    /**
+     * show tree or blob by hash
+     */
     public void showObjectByHash(String hash) {
         if(objects.containsKey(hash)) {
             System.out.printf(objects.get(hash).toString() + "\n");
