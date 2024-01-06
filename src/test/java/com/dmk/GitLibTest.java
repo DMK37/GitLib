@@ -224,6 +224,7 @@ class GitLibTest {
         gitLib.commit("dmk", "first commit dev");
         gitLib.switchBranch("master");
         gitLib.add("files/file3.txt");
+        gitLib.commit("dmk", "second commit master");
         Commit parentCommit = gitLib.listCommits().get(0);
         gitLib.switchBranch("dev");
         Commit parentCommitFromDev = gitLib.getCurrentBranch().getParentCommit();
