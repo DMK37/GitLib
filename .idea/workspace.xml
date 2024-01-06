@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="half finished README.md">
+    <list default="true" id="d1d76c7e-f656-4e89-9932-38659f70e846" name="Changes" comment="finished README.md + removed unused fields">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Branch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmk/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmk/TreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/TreeBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmk/GitLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/dmk/GitLibTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dmk/GitLibTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,6 +64,7 @@
     "JUnit.GitLibTest.executor": "Debug",
     "JUnit.GitLibTest.file1OnlyCreatedOnceButUsedInDifferentFolders.executor": "Run",
     "JUnit.GitLibTest.hashForBlobWithSameDataAlwaysOne.executor": "Debug",
+    "JUnit.GitLibTest.newBranchPointsToLastCommitAtMomentOfBranchCreation.executor": "Run",
     "Maven.GitLib [clean,install].executor": "Run",
     "Maven.GitLib [clean].executor": "Run",
     "Maven.GitLib [compile].executor": "Run",
@@ -167,9 +168,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GitLibTest.newBranchPointsToLastCommitAtMomentOfBranchCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GitLib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dmk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dmk" />
+      <option name="MAIN_CLASS_NAME" value="com.dmk.GitLibTest" />
+      <option name="METHOD_NAME" value="newBranchPointsToLastCommitAtMomentOfBranchCreation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GitLibTest" />
+        <item itemvalue="JUnit.GitLibTest.newBranchPointsToLastCommitAtMomentOfBranchCreation" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GitLibTest.file1OnlyCreatedOnceButUsedInDifferentFolders" />
         <item itemvalue="JUnit.GitLibTest.hashForBlobWithSameDataAlwaysOne" />
@@ -226,7 +244,15 @@
       <workItem from="1702718380586" duration="3796000" />
       <workItem from="1702732553342" duration="7037000" />
       <workItem from="1702748094972" duration="23000" />
-      <workItem from="1702759320638" duration="2701000" />
+      <workItem from="1702759320638" duration="3285000" />
+      <workItem from="1702841733398" duration="284000" />
+      <workItem from="1703001672820" duration="16000" />
+      <workItem from="1704473490621" duration="28000" />
+      <workItem from="1704473581688" duration="606000" />
+      <workItem from="1704490008383" duration="1988000" />
+      <workItem from="1704537076101" duration="2951000" />
+      <workItem from="1704540241287" duration="6000" />
+      <workItem from="1704550209412" duration="3320000" />
     </task>
     <task id="LOCAL-00001" summary="Created base files and classes for managing blobs, trees and commits.">
       <option name="closed" value="true" />
@@ -268,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702747134274</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="finished README.md + removed unused fields">
+      <option name="closed" value="true" />
+      <created>1702762065036</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702762065036</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,9 +326,24 @@
     <MESSAGE value="Added comments" />
     <MESSAGE value="changed to hashmap findCommitByHash" />
     <MESSAGE value="half finished README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="half finished README.md" />
+    <MESSAGE value="finished README.md + removed unused fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished README.md + removed unused fields" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/dmk/GitLibTest.java</url>
+          <line>188</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/dmk/GitLibTest.java</url>
+          <line>207</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.dmk.GitLib" memberName="objects" />

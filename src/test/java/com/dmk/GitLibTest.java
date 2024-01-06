@@ -174,4 +174,59 @@ class GitLibTest {
         }
         assertNotEquals(b1.getData(), b2.getData());
     }
+
+    @Test
+    void masterBranchWithOneCommitAndDevBranchWithTwoCommits() {
+        GitLib gitLib = new GitLib(System.getProperty("user.dir") + "/src/test/resources");
+        gitLib.add("files/file1.txt");
+        gitLib.commit("dmk", "first commit master");
+        gitLib.addBranch("dev");
+        gitLib.switchBranch("dev");
+        gitLib.add("files/file2.txt");
+        gitLib.commit("dmk", "first commit dev");
+        gitLib.add("files/file3.txt");
+        gitLib.commit("dmk", "second commit dev");
+        assertEquals(2, gitLib.listCommits().size());
+        gitLib.switchBranch("master");
+        assertEquals(1, gitLib.listCommits().size());
+    }
+
+    @Test
+    void masterDevUpdateBranchesAndCreatedBranchPointsToRightParentBranch() {
+        GitLib gitLib = new GitLib(System.getProperty("user.dir") + "/src/test/resources");
+        gitLib.add("files/file1.txt");
+        gitLib.commit("dmk", "first commit master");
+        gitLib.addBranch("dev");
+        gitLib.switchBranch("dev");
+        gitLib.add("files/file2.txt");
+        gitLib.commit("dmk", "first commit dev");
+        gitLib.add("files/file3.txt");
+        gitLib.commit("dmk", "second commit dev");
+        gitLib.addBranch("update");
+        gitLib.switchBranch("update");
+        gitLib.add("files/subdir/file1.txt");
+        gitLib.commit("dmk", "first commit update");
+        assertEquals("dev", gitLib.getCurrentBranch().getParentBranchName());
+        gitLib.switchBranch("dev");
+        assertEquals("master", gitLib.getCurrentBranch().getParentBranchName());
+        gitLib.switchBranch("master");
+        assertNull(gitLib.getCurrentBranch().getParentBranchName());
+    }
+
+    @Test
+    void newBranchPointsToLastCommitAtMomentOfBranchCreation() {
+        GitLib gitLib = new GitLib(System.getProperty("user.dir") + "/src/test/resources");
+        gitLib.add("files/file1.txt");
+        gitLib.commit("dmk", "first commit master");
+        gitLib.addBranch("dev");
+        gitLib.switchBranch("dev");
+        gitLib.add("files/file2.txt");
+        gitLib.commit("dmk", "first commit dev");
+        gitLib.switchBranch("master");
+        gitLib.add("files/file3.txt");
+        Commit parentCommit = gitLib.listCommits().get(0);
+        gitLib.switchBranch("dev");
+        Commit parentCommitFromDev = gitLib.getCurrentBranch().getParentCommit();
+        assertEquals(parentCommit, parentCommitFromDev);
+    }
 }
