@@ -1,6 +1,6 @@
 # GitLib
 
-Test task for Jetbrains internship.
+
 
 Some example usage can be found in tests.
 
